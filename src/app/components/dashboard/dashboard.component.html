@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Todo List</h1>
+
+  <div class="toolbar">
+    <div><input type="text" [(ngModel)]="task" /></div>
+    <div>
+      <button type="button" (click)="Onsubmit()">
+        {{ editMode ? " Update" : "add" }}
+      </button>
+    </div>
+  </div>
+  <h2>Tasks :</h2>
+  <div class="tasks" *ngFor="let t of taskarr">
+    <p>{{ t.name }}</p>
+    <p>{{ t.date | date }}</p>
+    <div>
+      <button id="edi" type="button" (click)="edit(t)">edit</button>
+      <button id="del" type="button" (click)="delete(t)">delete</button>
+    </div>
+  </div>
+</div>
